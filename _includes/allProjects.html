@@ -1,0 +1,54 @@
+<script type="module">
+	//this is a module to dynamically create the project navigation
+	let allProjects = [ 
+		{ 
+			"title": "THE POPSICLE",
+			"href": "popsicle.html"
+		},
+		{ 
+			"title": "THE COUCH",
+			"href": "couch.html"
+		},
+		{ 
+			"title": "THE CHAIR",
+			"href": "chair.html"
+		},
+		{ 
+			"title": "THE CHAIR?",
+			"href": "maybekindofachair.html"
+		},
+		{ 
+			"title": "THE CART",
+			"href": "cart.html"
+		},
+		{ 
+			"title": "THE BED",
+			"href": "bed.html"
+		},
+		{ 
+			"title": "THE TV",
+			"href": "tv.html"
+		},
+		{ 
+			"title": "THE TOILET",
+			"href": "toilet.html"
+		},
+		{ 
+			"title": "THE CROWBAR",
+			"href": "crowbar.html"
+		},
+		{ 
+			"title": "SUGGESTIONS?",
+			"href": "suggestions.html"
+		}
+	]
+	
+	let allProjDiv = document.querySelector("#allProj .contentParent")
+	for (let i=0; i<allProjects.length; i++){
+		let a = document.createElement("a")
+		a.href = allProjects[i].href
+		a.innerHTML = allProjects[i].title
+		allProjDiv.append(a)
+	}
+
+</script>

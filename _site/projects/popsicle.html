@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DECKS DECKS DECKS DECKS</title>
+	<link rel="stylesheet" type="text/css" href=../assets/css/process.css>
+	<link rel="stylesheet" type="text/css" href=../assets/css/processMQ.css>
+	<link rel="stylesheet" type="text/css" href=../assets/css/fonts.css>
+	<link rel="stylesheet" type="text/css" href=../assets/css/zoom.css>
+	<link rel="stylesheet" type="text/css" href=../assets/css/colors.css>
+	<script type="module" src=../assets/js/tabs.js></script>
+	<script type="module" src=../assets/js/zoom.js></script>
+</head>
+<body>
+	<svg width="100vw" height="200vh" xmlns="http://www.w3.org/2000/svg">
+  		<defs>
+   			<pattern id="grid" width="2vw" height="2vw" patternUnits="userSpaceOnUse">
+      			<rect width="100vw" height="100vh" fill="url(#smallGrid)"/>
+      			<path d="M 80 0 L 0 0 0 80" fill="none" stroke="black" stroke-width="1"/>
+    		</pattern>
+  		</defs>
+  		<rect width="100%" height="100%" fill="url(#grid)" />
+	</svg>
+	<section id="zoom" class="hide">
+		<h2 class=" boxy">PREVIEW</h2>
+		<img>
+	</section>
+	<main>
+		<h2 id="title" class="parents boxy">THE POPSICLE</h2>
+		<span id="preview" class="parents boxy">
+			<h2 class=" boxy lilTitles">PREVIEW</h2>
+			<div class="contentParent">
+				<img src=../assets/media/images/popsicle.PNG>
+			</div>
+		</span>
+		<span id="process" class="parents boxy">
+			<h2 class=" boxy lilTitles">PROCESS</h2>
+			<div id=tabs>
+				<button id="desc" class="currentTab">DESCRIPTION</button>
+				<button id="steps">STEPS</button>
+				<button id="gallery">GALLERY</button>
+			</div>
+			<div class="contentParent">
+				<div id="descContent" class="bodytext"><h3>DESCRIPTION</h3>The classic, most iconic skate deck. <br><br> I consider this the control group, as a frame of reference for everything else in this project.</div>
+				<div id="stepsContent" class="bodytext hide"><h3>STEPS</h3>I measured my preferred skateboards I've owned and made a <special>schematic</special> of what I'd ideally want in a classic popsicle deck.<br><br> Using bending plys from the Parsons woodshop, I <special>cut them down</special> to be slightly oversized at <special>9" x 34."</special><br><br> For the deck art, I decided to silkscreen a <special>graphic</special> onto the wood. I specifically chose to print on the flat plys because it's easier to print on before molding the deck to it's nose and tail shape.</div>
+				<div id="galleryContent" class="bodytext hide"><h3>GALLERY</h3></div>
+			</div>
+		</span>
+		<span id="allProj" class="parents boxy">
+			<h2 class=" boxy lilTitles">ALL PROJECTS</h2>
+			<div class="contentParent"></div>
+		</span>
+	</main>
+	<footer><a href="../index.html"><img src=../assets/media/images/logo.png></a></footer>
+	<script type="module">
+	//this is a module to dynamically create the project navigation
+	let allProjects = [ 
+		{ 
+			"title": "THE POPSICLE",
+			"href": "popsicle.html"
+		},
+		{ 
+			"title": "THE COUCH",
+			"href": "couch.html"
+		},
+		{ 
+			"title": "THE CHAIR",
+			"href": "chair.html"
+		},
+		{ 
+			"title": "THE CHAIR?",
+			"href": "maybekindofachair.html"
+		},
+		{ 
+			"title": "THE CART",
+			"href": "cart.html"
+		},
+		{ 
+			"title": "THE BED",
+			"href": "bed.html"
+		},
+		{ 
+			"title": "THE TV",
+			"href": "tv.html"
+		},
+		{ 
+			"title": "THE TOILET",
+			"href": "toilet.html"
+		},
+		{ 
+			"title": "THE CROWBAR",
+			"href": "crowbar.html"
+		},
+		{ 
+			"title": "SUGGESTIONS?",
+			"href": "suggestions.html"
+		}
+	]
+	
+	let allProjDiv = document.querySelector("#allProj .contentParent")
+	for (let i=0; i<allProjects.length; i++){
+		let a = document.createElement("a")
+		a.href = allProjects[i].href
+		a.innerHTML = allProjects[i].title
+		allProjDiv.append(a)
+	}
+
+</script>
+	---
+---
+
+<script>
+	let specials = document.querySelectorAll("special");
+	let currentImg = document.querySelector("#preview img");
+	let zoomImgEl = document.querySelector("#zoom img");
+
+	specials.addEventListener("mouseenter", ()=>{
+		console.log("")
+	})
+</script>
+</body>
+</html>
