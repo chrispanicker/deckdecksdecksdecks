@@ -3,10 +3,57 @@
 
 <script>
 	let specials = document.querySelectorAll("special");
-	let currentImg = document.querySelector("#preview img");
+	let previewDiv = document.querySelector(".contentParent");
+	let currentImg = document.querySelector(".contentParent img");
+	let zoomEl = document.querySelector("#zoom");
 	let zoomImgEl = document.querySelector("#zoom img");
+	let mediaArray = [{{page.media}}]
 
-	specials.addEventListener("mouseenter", ()=>{
-		console.log("{{page.source}}")
+	zoomImgEl.src = '{{page.schematic}}';
+	for(let i=0; i<specials.length; i++){
+		specials[i].addEventListener("mouseenter", ()=>{
+			if(mediaArray[i].includes("MOV")){
+				previewDiv.innerHTML = ""
+				let vid = document.createElement("video");
+				vid.autoplay = true;
+				vid.loop = true;
+				vid.muted = true;
+				vid.controls = true;
+				vid.src = mediaArray[i];
+				previewDiv.append(vid);
+
+			}else{
+				previewDiv.innerHTML = ""
+				let img = document.createElement("img");
+				img.src = mediaArray[i];
+				zoomImgEl.src = mediaArray[i];
+
+				img.addEventListener("click", ()=>{
+					zoomEl.classList.remove("hide");
+					zoomEl.style.display = "flex"
+				})
+				previewDiv.append(img);
+
+			}
+		});
+
+
+
+	}
+
+	currentImg.addEventListener("click", ()=>{
+		zoomEl.classList.remove("hide");
+		zoomEl.style.display = "flex"
+	})
+
+	zoomEl.addEventListener("click", ()=>{
+		zoomEl.classList.add("hide");
+		zoomEl.style.display = "none"
+	})
+	
+
+	zoomImgEl.addEventListener("click", ()=>{
+		zoomEl.classList.add("hide");
+		zoomEl.style.display = "none"
 	})
 </script>

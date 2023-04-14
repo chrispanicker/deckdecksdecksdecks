@@ -10,7 +10,7 @@ let htmlEl = document.querySelector("html");
 
 window.addEventListener('scroll',()=>{
     // infinite scroll!
-    if(window.scrollX + window.innerWidth >= document.documentElement.scrollWidth){
+    if(window.scrollX + window.innerHeight*1.8 >= document.documentElement.scrollWidth*.95){
     	htmlEl.style.scrollBehavior = "unset";
       setTimeout(() => {
         window.scroll(0,0);

@@ -13,13 +13,14 @@
 	<link rel="stylesheet" type="text/css" href={{ '../assets/css/fonts.css' | relativeurl }}>
 	<link rel="stylesheet" type="text/css" href={{ '../assets/css/zoom.css' | relativeurl }}>
 	<link rel="stylesheet" type="text/css" href={{ '../assets/css/colors.css' | relativeurl }}>
+	<link rel="stylesheet" type="text/css" href={{ '../assets/css/overlay.css' | relativeurl }}>
 	<script type="module" src={{ '../assets/js/tabs.js' | relativeurl }}></script>
-	<script type="module" src={{ '../assets/js/zoom.js' | relativeurl }}></script>
 </head>
 <body>
-	<svg width="100vw" height="200vh" xmlns="http://www.w3.org/2000/svg">
+	<img id="overlay" src="../assets/media/images/paper.jpg">
+	<svg width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg">
   		<defs>
-   			<pattern id="grid" width="2vw" height="2vw" patternUnits="userSpaceOnUse">
+   			<pattern id="grid" width="2vh" height="2vh" patternUnits="userSpaceOnUse">
       			<rect width="100vw" height="100vh" fill="url(#smallGrid)"/>
       			<path d="M 80 0 L 0 0 0 80" fill="none" stroke="black" stroke-width="1"/>
     		</pattern>
@@ -59,5 +60,6 @@
 	<footer><a href="../index.html"><img src={{ "../assets/media/images/logo.png" | relativeurl }}></a></footer>
 	{% include allProjects.html %}
 	{% include footnotes.html %}
+	{% include gallery.html %}
 </body>
 </html>
