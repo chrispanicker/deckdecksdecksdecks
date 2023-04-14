@@ -1,5 +1,5 @@
 body{
-	background-color: black;
+	background-color: rgb(30, 30, 30);
 	margin: 0;
 	padding: 0;
 }
@@ -8,62 +8,54 @@ body{
 }
 
 h2{ 
-	font-size: 8vw; 
+	font-size: 8vh; 
 	background-color: white;
 	width: fit-content;
 	margin: 0;
-	padding: 0 2vw 0 2vw;
+	padding: 0 2vh 0 2vh;
 	color: black;
 	font-family: bodoni-mt;
+	transform: rotate(-2deg);
 }
 
 p{
 	font-family: sans-black;
-	font-size: 3vw;
-	padding: 0;
+	font-size: 3vh;
+	padding: 2vh;
 	margin: 0;
 }
 
 #main{
-	width: 100vw;
+	width: 100vh;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: space-around;
-	margin: 2vw 3vw 0 3vw;
+	justify-content: center;
+	margin: 2vh 3vh 0 3vh;
 	padding: 0;
 }
 
 #logo img{
-	width: 8vw;
+	width: 8vh;
 	position: absolute;
-	top: 5vw;
+	top: 5vh;
 	translate: rotate(-3deg);
-	right: 6vw;
+	right: 6vh;
 	transition: width .1s ease;
 }
 
 #logo img:hover{
-	width: 8.3vw;
+	width: 8.3vh;
 }
 
-iframe{
-	width: 94vw;
-	height: 40vh;
-}
-
-h2:last-of-type{
-	top: 25vw;
-	width: 92vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 2vw;
-	outline: solid white 1px;
-	outline-offset: -1px;
-	background-color: black;
-	color: white;
-	z-index: 1;
+#overlay{
+	top: 0;
 	position: absolute;
+	height: 100vh;
+	width: 100%;
+	mix-blend-mode: multiply;
+	z-index: 100;
+	pointer-events: none;
+	z-index: 100;
 }

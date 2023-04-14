@@ -31,3 +31,9 @@ window.addEventListener('scroll',()=>{
     // skateBar.style.width = boardSize;
     // skateBar.style.left = skateBarPos + "vw";
 });
+// let x =0;
+
+// setInterval(()=>{
+//   window.scroll(x,0)
+//   x++;
+// }, 1);
